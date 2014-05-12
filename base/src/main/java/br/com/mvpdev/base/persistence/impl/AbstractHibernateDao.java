@@ -3,6 +3,8 @@ package br.com.mvpdev.base.persistence.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import br.com.mvpdev.base.persistence.IOperations;
 
 import com.google.common.base.Preconditions;
 
+@Transactional
 public abstract class AbstractHibernateDao<T extends Serializable> implements
 	IOperations<T> {
 
