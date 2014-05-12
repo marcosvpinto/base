@@ -45,7 +45,7 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
     @Override
     public void create(T entity) {
 	Preconditions.checkNotNull(entity);
-	getCurrentSession().saveOrUpdate(entity);
+	getCurrentSession().save(entity);
     }
 
     @SuppressWarnings("unchecked")
