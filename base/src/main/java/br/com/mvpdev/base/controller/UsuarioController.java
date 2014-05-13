@@ -3,6 +3,7 @@ package br.com.mvpdev.base.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.mvpdev.base.models.Usuario;
 import br.com.mvpdev.base.service.IUsuarioService;
@@ -23,6 +24,13 @@ public class UsuarioController {
     public String adiciona(Usuario usuario) {
 	usuarioService.criaUsuario(usuario);
 	return "redirect:/";
+    }
+
+    @RequestMapping("lista")
+    public ModelAndView lista() {
+	ModelAndView mv = new ModelAndView("usuarios/lista");
+	mv.addObject("referencias", usuarioService.buscaTodosUsuarios());
+	return mv;
     }
 
 }
