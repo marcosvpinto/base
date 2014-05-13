@@ -24,7 +24,6 @@ public class UsuarioDao extends AbstractHibernateDao<Usuario> implements
     @Override
     public List<Usuario> findAll() {
 	return super.findAll();
-	// return getCurrentSession().createQuery("from Usuario").list();
     }
 
     @Override

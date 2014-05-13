@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.mvpdev.base.models.Usuario;
-import br.com.mvpdev.base.persistence.IUsuarioDao;
+import br.com.mvpdev.base.service.IUsuarioService;
 
 @RequestMapping("/usuario")
 @Controller
 public class UsuarioController {
 
     @Autowired
-    IUsuarioDao usuarioDao;
+    IUsuarioService usuarioService;
 
     @RequestMapping("novo")
     public String novo() {
@@ -21,7 +21,7 @@ public class UsuarioController {
 
     @RequestMapping("adicionaUsuario")
     public String adiciona(Usuario usuario) {
-	usuarioDao.create(usuario);
+	usuarioService.criaUsuario(usuario);
 	return "redirect:/";
     }
 
