@@ -37,7 +37,7 @@ public class LoginController {
     }
 
     @Transactional
-    @RequestMapping("login")
+    @RequestMapping("/login")
     public String efetuaLogin(Usuario usuario, HttpSession session) {
 	usuarios = carregaUsuarios();
 	for (Usuario usuario2 : usuarios) {

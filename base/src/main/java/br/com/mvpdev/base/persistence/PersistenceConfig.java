@@ -2,6 +2,7 @@ package br.com.mvpdev.base.persistence;
 
 import java.util.Properties;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
@@ -23,6 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class PersistenceConfig {
 
     @Autowired
+    @Resource
     private Environment env;
 
     @Bean
@@ -66,6 +68,8 @@ public class PersistenceConfig {
 		setProperty("hibernate.dialect",
 			env.getProperty("hibernate.dialect"));
 		setProperty("hibernate.globally_quoted_identifiers", "true");
+		setProperty("hibernate.show_sql",
+			env.getProperty("hibernate.show_sql"));
 	    }
 	};
     }

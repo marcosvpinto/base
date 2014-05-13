@@ -18,37 +18,32 @@ public class UsuarioDao extends AbstractHibernateDao<Usuario> implements
 
     @Override
     public Usuario findOne(long id) {
-	// TODO Auto-generated method stub
 	return super.findOne(id);
     }
 
     @Override
     public List<Usuario> findAll() {
-	// TODO Auto-generated method stub
 	return super.findAll();
+	// return getCurrentSession().createQuery("from Usuario").list();
     }
 
     @Override
     public void create(Usuario entity) {
-	// TODO Auto-generated method stub
 	super.create(entity);
     }
 
     @Override
     public Usuario update(Usuario entity) {
-	// TODO Auto-generated method stub
 	return super.update(entity);
     }
 
     @Override
     public void delete(Usuario entity) {
-	// TODO Auto-generated method stub
 	super.delete(entity);
     }
 
     @Override
     public void deleteById(long entityId) {
-	// TODO Auto-generated method stub
 	super.deleteById(entityId);
     }
 

@@ -22,7 +22,7 @@ public class UsuarioController {
     @RequestMapping("adicionaUsuario")
     public String adiciona(Usuario usuario) {
 	usuarioDao.create(usuario);
-	return "redirect:/login";
+	return "redirect:/";
     }
 
 }

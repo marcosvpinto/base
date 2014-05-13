@@ -22,6 +22,13 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
     @Autowired
     private SessionFactory sessionFactory;
 
+    /*
+     * private SessionFactory sessionFactory = HibernateUtil
+     * .configureSessionFactory();
+     */
+
+    /* Transaction tx = getCurrentSession().beginTransaction(); */
+
     protected final void setClazz(final Class<T> clazzToSet) {
 	clazz = Preconditions.checkNotNull(clazzToSet);
     }
@@ -39,7 +46,8 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
     @SuppressWarnings("unchecked")
     @Override
     public List<T> findAll() {
-	return getCurrentSession().createQuery("from" + clazz.getName()).list();
+	return getCurrentSession().createQuery("from " + clazz.getSimpleName())
+		.list();
     }
 
     @Override
