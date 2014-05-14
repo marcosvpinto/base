@@ -56,7 +56,6 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
 	getCurrentSession().save(entity);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public T update(T entity) {
 	Preconditions.checkNotNull(entity);

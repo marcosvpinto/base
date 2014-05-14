@@ -17,6 +17,22 @@
 		<title>Login</title>
 	</head>
 	<body>
+		<div class="ui menu">
+		  <a class="active item">
+		    <i class="home icon"></i> Início
+		  </a>
+		  <a class="item" href="usuario/lista">
+		    <i class="users icon"></i> Usuários
+		  </a>
+		  <div class="right menu">
+		    <div class="item">
+		      <div class="ui icon input">
+		        <input type="text" placeholder="Search...">
+		        <i class="search link icon"></i>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<div class="ui form segment">
 			<form action="login" method="post">
 				<div class="field">

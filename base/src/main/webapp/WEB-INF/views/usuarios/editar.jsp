@@ -14,7 +14,7 @@
 		    	text-decoration: none;
 		    }
 		</style>
-		<title>Cadastrar novo usuário</title>
+		<title>Editar usuário</title>
 	</head>
 	<body>
 		<div class="ui menu">
@@ -34,11 +34,11 @@
 		  </div>
 		</div>
 		<div class="ui form segment">
-			<form action="adiciona" method="post">
+			<form action="altera" method="post">
 				<div class="field">
 					<label>Nome: </label>
 					<div class="ui left labeled icon input">
-						<input type="text" name="nome"  placeholder="Nome" />
+						<input type="text" name="nome"  placeholder="Nome" value="${usuario.nome}" />
 						<i class="user icon"></i>
 				      	<div class="ui corner label">
 				        	<i class="icon asterisk"></i>
@@ -48,7 +48,7 @@
 				<div class="field">
 					<label>Login: </label>
 					<div class="ui left labeled icon input">
-						<input type="text" name="login"  placeholder="Login" />
+						<input type="text" name="login"  placeholder="Login" value="${usuario.login}" />
 						<i class="user icon"></i>
 				      	<div class="ui corner label">
 				        	<i class="icon asterisk"></i>
@@ -58,18 +58,14 @@
 				<div class="field">
 					<label>Senha: </label>
 					<div class="ui left labeled icon input">
-						<input type="password" name="senha" placeholder="Senha" /> <br/>
+						<input type="password" name="senha" placeholder="Senha" value="${usuario.senha}" /> <br/>
 						<i class="lock icon"></i>
 			      		<div class="ui corner label">
 			        		<i class="icon asterisk"></i>
 			     		</div>
 			    	</div>
 				</div>
-				<div class="ui buttons">
-					<input type="submit" class="ui positive button" value="Cadastrar" />
-					<div class="or"></div>
-					<input type="reset" class="ui negative button" value="Cancelar" />
-				</div>
+				<input type="submit" class="ui positive button" value="Alterar" />
 			</form>
 		</div>
 		
@@ -78,7 +74,7 @@
 		</div>
 		<div class="ui labeled icon button">
   			<i class="left icon"></i>
-			<a href="../login">Retornar</a>
+			<a href="lista">Retornar</a>
 		</div>
 		<script src="../resources/javascript/semantic.min.js"></script>
 	</body>
