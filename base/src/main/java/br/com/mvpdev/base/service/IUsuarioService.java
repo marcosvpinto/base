@@ -8,7 +8,7 @@ public interface IUsuarioService {
 
     public void criaUsuario(Usuario usuario);
 
-    public Usuario atualizaUsuario(Usuario usuario);
+    public void atualizaUsuario(Usuario usuario);
 
     public void removeUsuario(Usuario usuario);
 

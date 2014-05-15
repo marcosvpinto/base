@@ -32,8 +32,8 @@ public class UsuarioDao extends AbstractHibernateDao<Usuario> implements
     }
 
     @Override
-    public Usuario update(Usuario entity) {
-	return super.update(entity);
+    public void update(Usuario entity) {
+	super.update(entity);
     }
 
     @Override

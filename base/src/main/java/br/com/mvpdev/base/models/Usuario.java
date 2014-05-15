@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @SuppressWarnings("serial")
 @Entity
+@org.hibernate.annotations.Entity(dynamicUpdate = true)
 public class Usuario implements Serializable {
 
     @Id

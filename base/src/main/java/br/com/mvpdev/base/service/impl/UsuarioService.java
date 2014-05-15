@@ -21,8 +21,8 @@ public class UsuarioService implements IUsuarioService {
     }
 
     @Override
-    public Usuario atualizaUsuario(Usuario usuario) {
-	return usuarioDao.update(usuario);
+    public void atualizaUsuario(Usuario usuario) {
+	usuarioDao.update(usuario);
     }
 
     @Override

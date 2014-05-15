@@ -53,13 +53,13 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
     @Override
     public void create(T entity) {
 	Preconditions.checkNotNull(entity);
-	getCurrentSession().save(entity);
+	getCurrentSession().saveOrUpdate(entity);
     }
 
     @Override
-    public T update(T entity) {
+    public void update(T entity) {
 	Preconditions.checkNotNull(entity);
-	return (T) getCurrentSession().merge(entity);
+	getCurrentSession().saveOrUpdate(entity);
     }
 
     @Override

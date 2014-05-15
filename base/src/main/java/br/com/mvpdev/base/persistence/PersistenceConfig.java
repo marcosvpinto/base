@@ -70,6 +70,8 @@ public class PersistenceConfig {
 		setProperty("hibernate.globally_quoted_identifiers", "true");
 		setProperty("hibernate.show_sql",
 			env.getProperty("hibernate.show_sql"));
+		setProperty("hibernate.order_updates",
+			env.getProperty("hibernate.order_updates"));
 	    }
 	};
     }
