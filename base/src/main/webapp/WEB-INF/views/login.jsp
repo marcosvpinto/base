@@ -62,10 +62,11 @@
 		<div class="ui horizontal divider">
 		  Ou
 		</div>
-		<div class="ui labeled icon button">
-  			<i class="add sign icon"></i>
-			<a href="usuario/novo">Criar novo usuário</a>
-		</div>
+  		
+		<a href="usuario/novo" class="ui labeled icon button">
+			Criar novo usuário
+			<i class="add sign icon"></i>
+		</a>
 		
 		<script src="resources/javascript/semantic.min.js"></script>
 	</body>

@@ -1,5 +1,7 @@
 package br.com.mvpdev.base.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,9 @@ import br.com.mvpdev.base.service.IUsuarioService;
 @Controller
 public class UsuarioController {
 
+    private static final Logger logger = LoggerFactory
+	    .getLogger(UsuarioController.class);
+
     @Autowired
     IUsuarioService usuarioService;
 
@@ -24,6 +29,7 @@ public class UsuarioController {
     @RequestMapping("adiciona")
     public String adiciona(Usuario usuario) {
 	usuarioService.criaUsuario(usuario);
+	logger.info("Usuário criado: " + usuario.getNome());
 	return "redirect:/";
     }
 
@@ -36,6 +42,7 @@ public class UsuarioController {
 
     @RequestMapping("remove")
     public String remove(Usuario usuario) {
+	logger.info("Usuário a ser removido: " + usuario.getNome());
 	usuarioService.removeUsuarioPeloId(usuario.getId());
 	return "forward:lista";
     }
@@ -48,6 +55,7 @@ public class UsuarioController {
 
     @RequestMapping("altera")
     public String altera(Usuario usuario) {
+	logger.info("Usuário a ser atualizado: " + usuario.getNome());
 	usuarioService.atualizaUsuario(usuario);
 	return "forward:lista";
     }
