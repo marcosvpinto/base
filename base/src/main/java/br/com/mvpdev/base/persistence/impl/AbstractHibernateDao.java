@@ -57,9 +57,9 @@ public abstract class AbstractHibernateDao<T extends Serializable> implements
     }
 
     @Override
-    public void update(T entity) {
+    public T update(T entity) {
 	Preconditions.checkNotNull(entity);
-	getCurrentSession().saveOrUpdate(entity);
+	return (T) getCurrentSession().merge(entity);
     }
 
     @Override

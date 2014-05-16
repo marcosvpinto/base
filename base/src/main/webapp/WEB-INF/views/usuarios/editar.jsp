@@ -35,6 +35,7 @@
 		</div>
 		<div class="ui form segment">
 			<form action="altera" method="post">
+				<input type="hidden" name="id" value="${usuario.id}" />
 				<div class="field">
 					<label>Nome: </label>
 					<div class="ui left labeled icon input">
